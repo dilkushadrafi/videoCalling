@@ -2,19 +2,19 @@ import React from 'react';
 
 function PartnerLogo() {
     const partners = [
-        { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-        { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-        { name: "Spotify", logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" },
-        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-        { name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg" },
+        { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", url: "https://google.com" },
+        { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg", url: "https://microsoft.com" },
+        { name: "Spotify", logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg", url: "https://spotify.com" },
+        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", url: "https://amazon.com" },
+        { name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg", url: "https://netflix.com" },
+        { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg", url: "https://adobe.com" },
         // Duplicate for seamless scrolling
-        { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-        { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-        { name: "Spotify", logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" },
-        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-        { name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg" },
+        { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", url: "https://google.com" },
+        { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg", url: "https://microsoft.com" },
+        { name: "Spotify", logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg", url: "https://spotify.com" },
+        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", url: "https://amazon.com" },
+        { name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg", url: "https://netflix.com" },
+        { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg", url: "https://adobe.com" },
     ];
 
     return (
@@ -58,7 +58,12 @@ function PartnerLogo() {
                                 key={index}
                                 className="flex-shrink-0 mx-4"
                             >
-                                <div className="glass-card w-48 h-28 flex items-center justify-center rounded-xl transition-all duration-300 group cursor-pointer relative overflow-hidden">
+                                <a
+                                    href={partner.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="glass-card w-48 h-28 flex items-center justify-center rounded-xl transition-all duration-300 group cursor-pointer relative overflow-hidden block"
+                                >
                                     {/* Hover Glow Effect */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500"></div>
 
@@ -71,7 +76,7 @@ function PartnerLogo() {
                                     {/* Tech Corner Accents */}
                                     <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-purple-500/0 group-hover:border-purple-500/50 transition-all duration-300"></div>
                                     <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-pink-500/0 group-hover:border-pink-500/50 transition-all duration-300"></div>
-                                </div>
+                                </a>
                             </div>
                         ))}
                     </div>
