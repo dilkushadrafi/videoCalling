@@ -1,53 +1,62 @@
 import React from 'react';
 
 function PartnerLogo() {
+    const partners = [
+        { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+        { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+        { name: "Spotify", logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" },
+        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+        { name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+        { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg" },
+        // Duplicate for seamless scrolling
+        { name: "Google", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+        { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+        { name: "Spotify", logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" },
+        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+        { name: "Netflix", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
+        { name: "Adobe", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg" },
+    ];
+
     return (
-        <section className="relative py-12 overflow-hidden bg-gray-50 sm:py-16 lg:py-20 xl:py-32">
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div className="grid items-center grid-cols-1 xl:grid-cols-2">
-                    <div className="px-8 text-center xl:text-left xl:pr-16 md:max-w-2xl md:mx-auto xl:max-w-none">
-                        <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">
-                            Customers and brands love using Rareblocks
-                        </h2>
-                        <p className="mt-6 text-lg font-normal text-gray-600 font-pj">
-                            Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec,
-                            proin faucibus nibh et sagittis.
-                        </p>
-                    </div>
+        <section className="py-20 bg-gray-900 overflow-hidden relative">
+            {/* Background Gradients */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-600/20 rounded-full blur-3xl"></div>
+            </div>
 
-                    <div className="relative mt-8 sm:mt-12 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mt-0">
-                        <div className="absolute inset-16">
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-pj">
+                        Trusted by Industry Leaders
+                    </h2>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Join thousands of companies that rely on our platform for secure and high-quality video communication.
+                    </p>
+                </div>
+
+                {/* Marquee Container */}
+                <div className="relative w-full overflow-hidden mask-linear-gradient">
+                    {/* Gradient Masks for smooth fade edges */}
+                    <div className="absolute top-0 left-0 z-10 w-20 h-full bg-gradient-to-r from-gray-900 to-transparent"></div>
+                    <div className="absolute top-0 right-0 z-10 w-20 h-full bg-gradient-to-l from-gray-900 to-transparent"></div>
+
+                    <div className="flex w-[200%] animate-marquee pause-on-hover">
+                        {partners.map((partner, index) => (
                             <div
-                                className="w-full h-full mx-auto rotate-180 opacity-30 rounded-3xl blur-lg filter"
-                                style={{
-                                    background: "linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)"
-                                }}
-                            ></div>
-                        </div>
-
-                        <div className="relative space-y-5">
-                            {[...Array(3)].map((_, rowIndex) => (
-                                <div
-                                    key={rowIndex}
-                                    className={`grid grid-cols-1 gap-5 sm:grid-cols-3 ${rowIndex === 1 ? 'xl:translate-x-6' : rowIndex === 2 ? 'xl:translate-x-12' : ''}`}
-                                >
-                                    {["vertex", "martino", "squarestone", "waverio", "fireli", "virogan", "aromix", "natroma", "waverio-2"].slice(rowIndex * 3, (rowIndex + 1) * 3).map((logo, index) => (
-                                        <div key={index} className="flex items-center justify-center px-6 py-4 mx-auto overflow-hidden bg-white rounded-lg shadow-lg w-44 md:w-full">
-                                            <img
-                                                className="w-auto h-8"
-                                                src={`https://cdn.rareblocks.xyz/collection/clarity/images/brands/3/logo-${logo}.svg`}
-                                                alt={logo}
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
-                        </div>
+                                key={index}
+                                className="flex items-center justify-center min-w-[200px] md:min-w-[250px] px-8 grayscale hover:grayscale-0 transition-all duration-300 opacity-50 hover:opacity-100 transform hover:scale-110 cursor-pointer"
+                            >
+                                <img
+                                    src={partner.logo}
+                                    alt={partner.name}
+                                    className="h-8 md:h-10 object-contain invert brightness-0 hover:invert-0 hover:brightness-100 transition-all duration-300"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
-
-            <div className="absolute inset-0 bg-gradient-to-b xl:bg-gradient-to-r from-transparent via-transparent to-gray-50"></div>
         </section>
     );
 }
