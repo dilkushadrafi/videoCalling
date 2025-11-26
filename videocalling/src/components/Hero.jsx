@@ -61,7 +61,7 @@ function Hero() {
                 {/* Badge */}
                 <div className="inline-flex items-center px-4 py-2 mb-6 text-sm font-semibold text-pink-400 bg-pink-500/10 rounded-full border border-pink-500/20 animate-slide-up">
                   <span className="w-2 h-2 mr-2 bg-pink-400 rounded-full animate-pulse"></span>
-                  Free Forever • No Sign-up Required
+                  Free Forever •
                 </div>
 
                 <h1 className="text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl font-pj animate-slide-up delay-100">
