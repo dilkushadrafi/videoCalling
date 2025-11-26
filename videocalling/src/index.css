@@ -118,3 +118,56 @@
 .pause-on-hover:hover {
   animation-play-state: paused;
 }
+
+/* Futuristic Additions */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, transparent, black, transparent);
+}
+
+@keyframes grid-move {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(40px);
+  }
+}
+
+.animate-grid-move {
+  animation: grid-move 2s linear infinite;
+}
+
+@keyframes cyber-pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.4);
+  }
+}
+
+.animate-cyber-pulse {
+  animation: cyber-pulse 3s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(236, 72, 153, 0.5);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+}
