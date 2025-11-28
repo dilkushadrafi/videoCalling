@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Faq = () => {
     const [openIndex, setOpenIndex] = useState(null);
+
 
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -99,13 +101,18 @@ const Faq = () => {
                 <div className="mt-12 text-center">
                     <p className="text-gray-400">
                         Still have questions?{' '}
-                        <a href="#" className="text-purple-400 font-medium hover:text-purple-300 transition-colors relative group">
+                        <Link
+                            to="/support"
+                            className="text-purple-400 font-medium hover:text-purple-300 transition-colors relative group focus:outline-none"
+                        >
                             Contact Support
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-400 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </div>
+
+
         </section>
     );
 };

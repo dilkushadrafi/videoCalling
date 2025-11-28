@@ -9,6 +9,7 @@ import Documentation from './components/Documentation'
 import HelpCenter from './components/HelpCenter'
 import Community from './components/Community'
 import Pricing from './components/Pricing'
+import CustomerSupport from './components/CustomerSupport'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/help' element={<HelpCenter />} />
         <Route path='/community' element={<Community />} />
         <Route path='/pricing' element={<Pricing />} />
+        <Route path='/support' element={<CustomerSupport />} />
       </Routes>
     </BrowserRouter>
 
