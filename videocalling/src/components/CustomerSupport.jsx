@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CustomerSupport = () => {
     return (
@@ -9,6 +10,16 @@ const CustomerSupport = () => {
                     <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10 animate-grid-move"></div>
                     <div className="absolute top-1/4 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-pulse"></div>
                     <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-pink-600/20 rounded-full blur-[100px] animate-pulse delay-1000"></div>
+                </div>
+
+                {/* Logo */}
+                <div className="absolute top-6 left-6 z-20">
+                    <Link to="/" className="flex items-center gap-2 group">
+                        <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-200">
+                            <span className="text-2xl">🎥</span>
+                        </div>
+                        <span className="text-xl font-bold text-white hidden sm:block">VideoCall</span>
+                    </Link>
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10 text-center">
