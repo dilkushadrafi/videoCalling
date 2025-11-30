@@ -41,7 +41,10 @@ app.get('/api/health', (req, res) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../videocalling/dist/index.html'));
+    console.log(`Catch-all hit for path: ${req.path}`);
+    const indexPath = path.resolve(__dirname, '../videocalling/dist/index.html');
+    console.log(`Serving index.html from: ${indexPath}`);
+    res.sendFile(indexPath);
 });
 
 // MongoDB Connection
