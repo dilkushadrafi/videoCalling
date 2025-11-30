@@ -249,6 +249,26 @@ const Navbar = () => {
                                         <p className="text-sm font-semibold text-white truncate">{user?.email}</p>
                                     </div>
                                     <button
+                                        onClick={() => {
+                                            navigate('/profile');
+                                            setExpanded(false);
+                                        }}
+                                        className="w-full flex items-center gap-3 px-4 py-3 text-base font-semibold text-gray-300 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all"
+                                    >
+                                        <span>👤</span>
+                                        Profile
+                                    </button>
+                                    <button
+                                        onClick={() => {
+                                            navigate('/settings');
+                                            setExpanded(false);
+                                        }}
+                                        className="w-full flex items-center gap-3 px-4 py-3 text-base font-semibold text-gray-300 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all"
+                                    >
+                                        <span>⚙️</span>
+                                        Settings
+                                    </button>
+                                    <button
                                         onClick={handleLogout}
                                         className="w-full px-4 py-3 text-base font-semibold text-white bg-red-600 rounded-lg hover:bg-red-700 transition-all"
                                     >
