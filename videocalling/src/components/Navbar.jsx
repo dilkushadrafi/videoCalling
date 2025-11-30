@@ -149,14 +149,14 @@ const Navbar = () => {
                                             <p className="text-sm text-gray-400">Signed in as</p>
                                             <p className="text-sm font-semibold text-white truncate">{user?.email}</p>
                                         </div>
-                                        <a href="#profile" className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-gray-700/50 hover:text-pink-400 transition-all">
+                                        <button onClick={() => { navigate('/profile'); setShowUserMenu(false); }} className="w-full flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-gray-700/50 hover:text-pink-400 transition-all text-left">
                                             <span className="text-xl">👤</span>
                                             <span className="text-sm font-medium">Profile</span>
-                                        </a>
-                                        <a href="#settings" className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-gray-700/50 hover:text-pink-400 transition-all">
+                                        </button>
+                                        <button onClick={() => { navigate('/settings'); setShowUserMenu(false); }} className="w-full flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-gray-700/50 hover:text-pink-400 transition-all text-left">
                                             <span className="text-xl">⚙️</span>
                                             <span className="text-sm font-medium">Settings</span>
-                                        </a>
+                                        </button>
                                         <button
                                             onClick={handleLogout}
                                             className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-gray-700/50 transition-all border-t border-gray-700/50"

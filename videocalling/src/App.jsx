@@ -10,6 +10,8 @@ import HelpCenter from './components/HelpCenter'
 import Community from './components/Community'
 import Pricing from './components/Pricing'
 import CustomerSupport from './components/CustomerSupport'
+import Profile from './components/Profile'
+import Settings from './components/Settings'
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path='/community' element={<Community />} />
         <Route path='/pricing' element={<Pricing />} />
         <Route path='/support' element={<CustomerSupport />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/settings' element={<Settings />} />
       </Routes>
     </BrowserRouter>
 

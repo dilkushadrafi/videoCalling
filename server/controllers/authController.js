@@ -47,7 +47,10 @@ export const signup = async (req, res) => {
             user: {
                 id: user._id,
                 username: user.username,
-                email: user.email
+                email: user.email,
+                totalCalls: user.totalCalls,
+                callDuration: user.callDuration,
+                contacts: user.contacts
             }
         });
     } catch (error) {
@@ -101,7 +104,10 @@ export const login = async (req, res) => {
             user: {
                 id: user._id,
                 username: user.username,
-                email: user.email
+                email: user.email,
+                totalCalls: user.totalCalls,
+                callDuration: user.callDuration,
+                contacts: user.contacts
             }
         });
     } catch (error) {
@@ -132,7 +138,10 @@ export const verifyToken = async (req, res) => {
             user: {
                 id: user._id,
                 username: user.username,
-                email: user.email
+                email: user.email,
+                totalCalls: user.totalCalls,
+                callDuration: user.callDuration,
+                contacts: user.contacts
             }
         });
     } catch (error) {
